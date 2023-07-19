@@ -1,0 +1,9 @@
+set(GTEST_ROOT ${SYS_THRLIB_DIR}/gtest)
+set(GTEST_INCLUDE_DIR ${GTEST_ROOT}/include)
+include_directories(SYSTEM ${GTEST_INCLUDE_DIR})
+
+set(GTEST_LIBRARY_DIR ${GTEST_ROOT}/lib)
+link_directories(${GTEST_LIBRARY_DIR})
+
+set(GTEST_LIBRARIES ${GTEST_LIBRARY_DIR}/libgtest.a)
+set(GTEST_MAIN_LIBRARIES ${GTEST_LIBRARY_DIR}/libgtest_main.a)
