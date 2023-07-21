@@ -9,9 +9,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_CONFIG_DIR ${CMAKE_CURRENT_SOURCE_DIR}/config/cmake)
-include(${CMAKE_CONFIG_DIR}/GLog.cmake)
-include(${CMAKE_CONFIG_DIR}/GTest.cmake)
-include(${CMAKE_CONFIG_DIR}/GFlags.cmake)
 
 file(GLOB_RECURSE VPTR source/vptr/*.cpp source/vptr/*.h)
 source_group(vptr FILES ${VPTR})
