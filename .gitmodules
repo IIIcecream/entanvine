@@ -1,4 +1,13 @@
 [submodule "3rd/googletest"]
 	path = 3rd/googletest
 	url = https://github.com/google/googletest.git
-	branch = v1.13.x
+	branch = v1.13.0
+[submodule "3rd/protobuf"]
+	path = 3rd/protobuf
+	url = https://github.com/protocolbuffers/protobuf.git
+[submodule "3rd/glog"]
+	path = 3rd/glog
+	url = https://github.com/google/glog.git
+[submodule "3rd/gflags"]
+	path = 3rd/gflags
+	url = https://github.com/gflags/gflags.git
