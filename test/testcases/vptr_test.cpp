@@ -16,11 +16,7 @@ using namespace vptr;
 typedef std::string(*pFunc)();
 using Func = std::function<std::string ()>;
 
-class Virtual_pointer_test : public testing::Test {
-
-};
-
-TEST_F(Virtual_pointer_test, no_virtual_base) {
+TEST(Virtual_pointer_test, no_virtual_base) {
   NoVirtualBase no_virtual_base;
   ASSERT_EQ(sizeof(no_virtual_base), 4);
 
@@ -29,7 +25,7 @@ TEST_F(Virtual_pointer_test, no_virtual_base) {
   ASSERT_EQ(begin_addr, first_member_addr);
 }
 
-TEST_F(Virtual_pointer_test, no_virtual_derive) {
+TEST(Virtual_pointer_test, no_virtual_derive) {
   NoVirtualDerive no_virtual_derive;
   ASSERT_EQ(sizeof(no_virtual_derive), 8);
 
@@ -43,7 +39,7 @@ TEST_F(Virtual_pointer_test, no_virtual_derive) {
 
 // vitrual pointer table pointer(起始地址为虚标指针）
 // 紧接着是成员变量
-TEST_F(Virtual_pointer_test, virtual_base) {
+TEST(Virtual_pointer_test, virtual_base) {
   Base base;
   ASSERT_EQ(sizeof(base), 16);
 
@@ -68,7 +64,7 @@ TEST_F(Virtual_pointer_test, virtual_base) {
   ASSERT_EQ("Base::h()", func_h());
 }
 
-TEST_F(Virtual_pointer_test, common_virtual_pointer_table) {
+TEST(Virtual_pointer_test, common_virtual_pointer_table) {
   Base base1, base2;
   // 虚表指针相等
   ASSERT_EQ(*(uint64_t*)&base1, *(uint64_t*)&base2);
@@ -77,7 +73,7 @@ TEST_F(Virtual_pointer_test, common_virtual_pointer_table) {
             *(uint64_t*)*(uint64_t*)&base2);
 }
 
-TEST_F(Virtual_pointer_test, derive1) {
+TEST(Virtual_pointer_test, derive1) {
   Derive1 derive;
   ASSERT_EQ(sizeof(derive), 16);
 
@@ -106,7 +102,7 @@ TEST_F(Virtual_pointer_test, derive1) {
   ASSERT_EQ("Base::h()", func_h());
 }
 
-TEST_F(Virtual_pointer_test, derive2) {
+TEST(Virtual_pointer_test, derive2) {
   Derive2 derive;
   ASSERT_EQ(sizeof(derive), 16);
 

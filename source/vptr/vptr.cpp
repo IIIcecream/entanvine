@@ -2,7 +2,7 @@
 //
 // Author: icecream
 
-#include "vptr.h"
+#include "vptr/vptr.h"
 
 namespace vptr {
 
